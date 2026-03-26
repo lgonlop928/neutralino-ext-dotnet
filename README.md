@@ -23,7 +23,7 @@
     <path fill="rgb(255,255,255)" d="M 195.933 254.762 C 197.462 254.205 199.173 254.517 200.407 255.578 C 201.641 256.64 202.205 258.284 201.883 259.88 C 201.562 261.475 200.403 262.772 198.855 263.272 C 197.461 263.722 195.935 263.465 194.765 262.584 C 193.596 261.702 192.928 260.307 192.976 258.843 C 193.036 257.007 194.206 255.391 195.933 254.762 Z" style="stroke-width: 0.25;"/>
   </g>
 </svg>
-![Logo NeutralinoJS+NET](https://github.com/user-attachments/assets/4556eabd-a99f-498d-8648-84c1ea4d2600)
+![Logo NeutralinoJS+NET](https://github.com/user-attachments/assets/c564d550-4206-4d50-91ce-de5c5a399586)
 
 # neutralino-ext-dotnet
 A .NET Extension for NeutralinoJS. This turns Neutralino into a reactive .NET GUI.
