@@ -13,9 +13,9 @@ This README is also adapted from that repository.
 ## What is this?
 This extension adds a .NET backend written in C# to Neutralino with the following features:
 - Requires only a few lines of code on both ends.
-- Run Python functions from Neutralino.
-- Run Neutralino functions from Python.
-- All communication between Neutralino and Python runs asynchronously.
+- Run .NET functions from Neutralino.
+- Run Neutralino functions from .NET
+- All communication between Neutralino and .NET runs asynchronously.
 - Terminates the .NET backend when the Neutralino app quits.
 
 ## Run the demo
