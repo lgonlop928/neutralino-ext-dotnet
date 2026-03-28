@@ -2,9 +2,9 @@
 using System.Text;
 using System.Text.Json;
 
-namespace NeutralinoExtension
+namespace NeutralinoDotNetExtension
 {
-    public class NeutralinoExt
+    public class NeutralinoExtension
     {
         private const string version = "1.0.0";
         private const bool debugTermColors = true; // Use terminal colors
@@ -25,7 +25,7 @@ namespace NeutralinoExtension
         
         private Dictionary<string, Action<string>> handlers = new Dictionary<string, Action<string>>();
 
-        public NeutralinoExt(bool debug = false)
+        public NeutralinoExtension(bool debug = false)
         {
             this.debug = debug;
             string[] args = Environment.GetCommandLineArgs();
@@ -234,16 +234,8 @@ namespace NeutralinoExtension
             Guid guid = Guid.NewGuid();
             string myguid = guid.ToString();
 
-            string json = $@"
-            {{
-              ""id"": ""{Guid.NewGuid()}"",
-              ""method"": ""app.broadcast"",
-              ""accessToken"": ""{token}"",
-              ""data"": {{
-                ""event"": ""{eventName}"",
-                ""data"": ""{dataObject}""
-              }}
-            }}";
+            string json = $@"{{""id"":""{Guid.NewGuid()}"",""method"":""app.broadcast"",""accessToken"":""{token}"",""data"":{{""event"":""{eventName}"",""data"":""{dataObject}""}}}}";
+
             DebugLog(json, "out");
             await socket.SendAsync(json);
         }
