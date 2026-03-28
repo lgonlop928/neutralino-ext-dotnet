@@ -1,9 +1,9 @@
 ﻿
-namespace NeutralinoExtension
+namespace NeutralinoDotNetExtension
 {
     public class Program
     {
-        static NeutralinoExt neutralino;
+        static NeutralinoExtension neutralino;
 
         static void Main(string[] args)
         {
@@ -20,7 +20,7 @@ namespace NeutralinoExtension
             // "Run" doesn't block the app, so you can continue to do stuff and update the UI
             // When the main code ends, the backend shuts down, so be careful with that
 
-            neutralino = new NeutralinoExt(true);
+            neutralino = new NeutralinoExtension(true);
             neutralino.Run();
             neutralino.AddEvent("test", Test);
             while (true)
