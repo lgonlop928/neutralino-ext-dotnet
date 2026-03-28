@@ -4,7 +4,7 @@ using System.Text.Json;
 
 namespace NeutralinoExtension
 {
-    public class NeutralinoExtension
+    public class NeutralinoExt
     {
         private const string version = "1.0.0";
         private const bool debugTermColors = true; // Use terminal colors
@@ -25,7 +25,7 @@ namespace NeutralinoExtension
         
         private Dictionary<string, Action<string>> handlers = new Dictionary<string, Action<string>>();
 
-        public NeutralinoExtension(bool debug = false)
+        public NeutralinoExt(bool debug = false)
         {
             this.debug = debug;
             string[] args = Environment.GetCommandLineArgs();
