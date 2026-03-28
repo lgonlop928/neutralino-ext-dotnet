@@ -234,19 +234,16 @@ namespace NeutralinoExtension
             Guid guid = Guid.NewGuid();
             string myguid = guid.ToString();
 
-            var d = new
-            {
-                id = Guid.NewGuid().ToString(),
-                method = "app.broadcast",
-                accessToken = token,
-                data = new
-                {
-                    @event = eventName,
-                    data = dataObject
-                }
-            };
-
-            string json = JsonSerializer.Serialize(d);
+            string json = $@"
+            {{
+              ""id"": ""{Guid.NewGuid()}"",
+              ""method"": ""app.broadcast"",
+              ""accessToken"": ""{token}"",
+              ""data"": {{
+                ""event"": ""{eventName}"",
+                ""data"": ""{dataObject}""
+              }}
+            }}";
             DebugLog(json, "out");
             await socket.SendAsync(json);
         }
