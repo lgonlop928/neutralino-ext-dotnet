@@ -70,11 +70,11 @@ If you want to add the ```neutralino-dotnet-ext``` to an existing project or to 
 - In your .NET project, add the ```NeutralinoExtension.cs``` library.
 - Create this global variable:
 ```csharp
-static NeutralinoExt neutralino;
+static NeutralinoExtension neutralino;
 ```
 - And then put this code in the ```main()``` method:
 ```csharp
-neutralino = new NeutralinoExt(true);
+neutralino = new NeutralinoExtension(true);
 neutralino.RunForever();
 ```
 
