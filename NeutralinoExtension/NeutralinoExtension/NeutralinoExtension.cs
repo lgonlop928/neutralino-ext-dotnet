@@ -234,7 +234,13 @@ namespace NeutralinoDotNetExtension
             Guid guid = Guid.NewGuid();
             string myguid = guid.ToString();
 
-            string json = $@"{{""id"":""{Guid.NewGuid()}"",""method"":""app.broadcast"",""accessToken"":""{token}"",""data"":{{""event"":""{eventName}"",""data"":""{dataObject}""}}}}";
+            // If the data is not JSON, we need to add quotes
+            if(!IsValidJson(dataObject))
+            {
+                dataObject = "\"" + dataObject + "\"";
+            }
+            
+            string json = $@"{{""id"":""{Guid.NewGuid()}"",""method"":""app.broadcast"",""accessToken"":""{token}"",""data"":{{""event"":""{eventName}"",""data"":{dataObject}}}}}";
 
             DebugLog(json, "out");
             await socket.SendAsync(json);
@@ -251,6 +257,19 @@ namespace NeutralinoDotNetExtension
                 }
             }
             return "";
+        }
+
+        private static bool IsValidJson(string str)
+        {
+            try
+            {
+                JsonDocument.Parse(str);
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
         }
     }
 
